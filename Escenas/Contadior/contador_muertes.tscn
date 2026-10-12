@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://62c5lx4q4sl0"]
+
+[ext_resource type="Script" uid="uid://d18k0xvy45ebo" path="res://Scripts/ContadorTiempo/contador_muertes.gd" id="1_lc042"]
+
+[node name="ContadorMuertes" type="HBoxContainer" unique_id=1704751112]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_lc042")

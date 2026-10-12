@@ -1,0 +1,290 @@
+[gd_scene format=3 uid="uid://is53r4j8apvr"]
+
+[ext_resource type="Script" uid="uid://b13uf2y0g5gri" path="res://Scripts/Protagonista/Protagonista.gd" id="1_ysl6r"]
+[ext_resource type="Texture2D" uid="uid://clamplwdxb13y" path="res://Arte/Protagonista/AGARRARSE1.png" id="2_3kacm"]
+[ext_resource type="Texture2D" uid="uid://b8kxblomw1cvn" path="res://Arte/Protagonista/IDLE3.png" id="2_clucr"]
+[ext_resource type="Texture2D" uid="uid://dc4bw4j8h7m1p" path="res://Arte/Protagonista/RUN2.png" id="2_p1wms"]
+[ext_resource type="Script" uid="uid://dt00qj411v016" path="res://Scripts/Protagonista/MaquinaEstados/Fsm_protagonista.gd" id="3_g8dsq"]
+[ext_resource type="Script" uid="uid://dyfslwb3q454h" path="res://Scripts/Protagonista/MaquinaEstados/Idle.gd" id="4_0n565"]
+[ext_resource type="Texture2D" uid="uid://cintx7tdqnc7i" path="res://Arte/Protagonista/Correr3.png" id="4_4hg40"]
+[ext_resource type="Texture2D" uid="uid://f0ay4vmka2v1" path="res://Arte/Protagonista/JUMP1.png" id="4_8vgw3"]
+[ext_resource type="Script" uid="uid://cix876ikmherv" path="res://Scripts/Protagonista/MaquinaEstados/Caminar.gd" id="5_0wbp1"]
+[ext_resource type="Script" uid="uid://5h5lx5ryliii" path="res://Scripts/Protagonista/MaquinaEstados/Saltar.gd" id="6_ap3br"]
+[ext_resource type="Script" uid="uid://co4ra7nq1jgg1" path="res://Scripts/Protagonista/MaquinaEstados/Correr.gd" id="7_0slli"]
+[ext_resource type="Texture2D" uid="uid://d3028j3rg4kw4" path="res://Arte/Protagonista/SLIDE.png" id="7_2a0ug"]
+[ext_resource type="Script" uid="uid://dcsnm7d2iruq3" path="res://Scripts/Protagonista/MaquinaEstados/Pared.gd" id="8_clucr"]
+[ext_resource type="Script" uid="uid://cv3ylli4b3nhn" path="res://Scripts/Protagonista/MaquinaEstados/Bloqueador.gd" id="13_au3pf"]
+[ext_resource type="Script" uid="uid://dor6l4fvrry82" path="res://Scripts/Protagonista/MaquinaEstados/Morir.gd" id="15_2a0ug"]
+[ext_resource type="AudioStream" uid="uid://cgcnrm5u865qg" path="res://Musica/EFETOS/Sonido Pasos.wav" id="16_jrs65"]
+[ext_resource type="AudioStream" uid="uid://br43pontevuco" path="res://Musica/EFETOS/SALTO.mp3" id="17_ogv3y"]
+[ext_resource type="AudioStream" uid="uid://e15euhls4h5b" path="res://Musica/EFETOS/muerte2.mp3" id="18_ocysy"]
+[ext_resource type="AudioStream" uid="uid://cbveqkuqa1asf" path="res://Musica/EFETOS/pinchos.mp3" id="19_ocysy"]
+[ext_resource type="AudioStream" uid="uid://c560n2vctdwdf" path="res://Musica/EFETOS/flecha.mp3" id="20_uju31"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogv3y"]
+atlas = ExtResource("2_3kacm")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hg40"]
+atlas = ExtResource("2_p1wms")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au3pf"]
+atlas = ExtResource("2_p1wms")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ru1f"]
+atlas = ExtResource("2_p1wms")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a0ug"]
+atlas = ExtResource("2_p1wms")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsf2a"]
+atlas = ExtResource("2_p1wms")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1b22y"]
+atlas = ExtResource("2_p1wms")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocysy"]
+atlas = ExtResource("4_4hg40")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uju31"]
+atlas = ExtResource("4_4hg40")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc1a2"]
+atlas = ExtResource("4_4hg40")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y8l3"]
+atlas = ExtResource("4_4hg40")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1wms"]
+atlas = ExtResource("2_clucr")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vgw3"]
+atlas = ExtResource("2_clucr")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kacm"]
+atlas = ExtResource("2_clucr")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrs65"]
+atlas = ExtResource("4_8vgw3")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3psyu"]
+atlas = ExtResource("7_2a0ug")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjhbm"]
+atlas = ExtResource("7_2a0ug")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvus2"]
+atlas = ExtResource("7_2a0ug")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0slli"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogv3y")
+}],
+"loop": true,
+"name": &"AGARRAR",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hg40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au3pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ru1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a0ug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsf2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1b22y")
+}],
+"loop": true,
+"name": &"ANDAR",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocysy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uju31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc1a2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y8l3")
+}],
+"loop": true,
+"name": &"CORRER",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1wms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vgw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kacm")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrs65")
+}],
+"loop": true,
+"name": &"SALTAR",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3psyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjhbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvus2")
+}],
+"loop": false,
+"name": &"SLIDER",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clucr"]
+size = Vector2(16, 9)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_clucr"]
+radius = 6.0
+height = 50.0
+
+[node name="Protagonista" type="CharacterBody2D" unique_id=784200017 groups=["Prota"]]
+collision_mask = 31
+script = ExtResource("1_ysl6r")
+
+[node name="Animaciones" type="AnimatedSprite2D" parent="." unique_id=331838601]
+sprite_frames = SubResource("SpriteFrames_0slli")
+animation = &"AGARRAR"
+autoplay = "IDLE"
+
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=164899841]
+position = Vector2(0, 27.5)
+shape = SubResource("RectangleShape2D_clucr")
+
+[node name="FSM" type="Node" parent="." unique_id=1126189949 node_paths=PackedStringArray("father", "animation_player", "current_state")]
+script = ExtResource("3_g8dsq")
+father = NodePath("..")
+animation_player = NodePath("../Animaciones")
+current_state = NodePath("BLOQUEADOR")
+
+[node name="IDLE" type="Node" parent="FSM" unique_id=1887152033 node_paths=PackedStringArray("caminar_state", "saltar_state", "muerte_state", "father", "animation_player")]
+script = ExtResource("4_0n565")
+caminar_state = NodePath("../CAMINAR")
+saltar_state = NodePath("../SALTAR")
+muerte_state = NodePath("../MUERTE")
+father = NodePath("../..")
+animation_player = NodePath("../../Animaciones")
+
+[node name="CAMINAR" type="Node" parent="FSM" unique_id=1952923288 node_paths=PackedStringArray("idle_state", "saltar_state", "correr_state", "muerte_state", "father", "animation_player")]
+script = ExtResource("5_0wbp1")
+idle_state = NodePath("../IDLE")
+saltar_state = NodePath("../SALTAR")
+correr_state = NodePath("../CORRER")
+muerte_state = NodePath("../MUERTE")
+father = NodePath("../..")
+animation_player = NodePath("../../Animaciones")
+
+[node name="SALTAR" type="Node" parent="FSM" unique_id=630356596 node_paths=PackedStringArray("idle_state", "caminar_state", "correr_state", "pared_state", "muerte_state", "father", "animation_player")]
+script = ExtResource("6_ap3br")
+idle_state = NodePath("../IDLE")
+caminar_state = NodePath("../CAMINAR")
+correr_state = NodePath("../CORRER")
+pared_state = NodePath("../PARED")
+muerte_state = NodePath("../MUERTE")
+father = NodePath("../..")
+animation_player = NodePath("../../Animaciones")
+
+[node name="CORRER" type="Node" parent="FSM" unique_id=1572668767 node_paths=PackedStringArray("idle_state", "saltar_state", "caminar_state", "muerte_state")]
+script = ExtResource("7_0slli")
+idle_state = NodePath("../IDLE")
+saltar_state = NodePath("../SALTAR")
+caminar_state = NodePath("../CAMINAR")
+muerte_state = NodePath("../MUERTE")
+
+[node name="PARED" type="Node" parent="FSM" unique_id=886209548 node_paths=PackedStringArray("idle_state", "caminar_state", "saltar_state", "muerte_state")]
+script = ExtResource("8_clucr")
+idle_state = NodePath("../IDLE")
+caminar_state = NodePath("../CAMINAR")
+saltar_state = NodePath("../SALTAR")
+muerte_state = NodePath("../MUERTE")
+
+[node name="BLOQUEADOR" type="Node" parent="FSM" unique_id=1960540204 node_paths=PackedStringArray("idle_state", "caminar_state", "muerte_state")]
+script = ExtResource("13_au3pf")
+idle_state = NodePath("../IDLE")
+caminar_state = NodePath("../CAMINAR")
+muerte_state = NodePath("../MUERTE")
+
+[node name="MUERTE" type="Node" parent="FSM" unique_id=1165900617 node_paths=PackedStringArray("muerte_state")]
+script = ExtResource("15_2a0ug")
+duracion_hasta_reiniciar = 3.0
+muerte_state = NodePath(".")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=462445559]
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1074071454]
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_clucr")
+debug_color = Color(0.9818997, 0.13531008, 5.7756904e-07, 0.41960785)
+
+[node name="AudioPasos" type="AudioStreamPlayer" parent="." unique_id=1826096279]
+stream = ExtResource("16_jrs65")
+volume_db = -1.399
+pitch_scale = 2.15
+
+[node name="Salto" type="AudioStreamPlayer" parent="." unique_id=691061463]
+stream = ExtResource("17_ogv3y")
+volume_db = -18.055
+
+[node name="CortarMusica" type="AudioStreamPlayer" parent="." unique_id=1017711576]
+stream = ExtResource("18_ocysy")
+
+[node name="MuertePinchos" type="AudioStreamPlayer" parent="." unique_id=1818353237]
+stream = ExtResource("19_ocysy")
+volume_db = -19.591
+
+[node name="MuerteFlechas" type="AudioStreamPlayer" parent="." unique_id=1720620415]
+stream = ExtResource("20_uju31")
+volume_db = -23.883
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="body_entered" from="HurtBox" to="." method="_on_area_colision_body_entered"]

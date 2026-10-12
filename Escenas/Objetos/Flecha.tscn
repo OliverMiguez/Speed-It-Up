@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://qtgj706ailhx"]
+
+[ext_resource type="Script" uid="uid://ba4eg0xqffklb" path="res://Scripts/Objetos/Flecha.gd" id="1_56hu7"]
+[ext_resource type="Texture2D" uid="uid://c5f34f4733gwr" path="res://Arte/Objetos/Flecha.png" id="1_gbvxl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbvxl"]
+size = Vector2(19, 6)
+
+[node name="Flecha" type="Area2D" unique_id=1174010641]
+collision_layer = 2
+script = ExtResource("1_56hu7")
+
+[node name="Dibujo" type="Sprite2D" parent="." unique_id=1067995258]
+texture = ExtResource("1_gbvxl")
+
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=1059957706]
+position = Vector2(3, -1)
+shape = SubResource("RectangleShape2D_gbvxl")
+debug_color = Color(0.96789366, 0.18176621, 1.92523e-07, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

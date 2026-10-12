@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://iq2ig8qorv1i"]
+
+[ext_resource type="Script" uid="uid://cb6wh5huh7uws" path="res://Scripts/ContadorTiempo/contador_tiempo_label.gd" id="1_7jqcx"]
+[ext_resource type="Texture2D" uid="uid://dvrs0mjw1hmam" path="res://Arte/Cuenta Atras/0.png" id="2_ctvr5"]
+[ext_resource type="Texture2D" uid="uid://t4syk3uof2k5" path="res://Arte/Cuenta Atras/1.png" id="3_sfnvt"]
+[ext_resource type="Texture2D" uid="uid://p8820oodqfx3" path="res://Arte/Cuenta Atras/2.png" id="4_b4drr"]
+[ext_resource type="Texture2D" uid="uid://cgoe4aar3ksfk" path="res://Arte/Cuenta Atras/3.png" id="5_ky0rv"]
+[ext_resource type="Texture2D" uid="uid://d4h1ldv1j0ble" path="res://Arte/Cuenta Atras/4.png" id="6_uwbgc"]
+[ext_resource type="Texture2D" uid="uid://boxseuw2rp3lb" path="res://Arte/Cuenta Atras/5.png" id="7_4jhn5"]
+[ext_resource type="Texture2D" uid="uid://i5753i06iipx" path="res://Arte/Cuenta Atras/6.png" id="8_iynu4"]
+[ext_resource type="Texture2D" uid="uid://b7eewtolotnmt" path="res://Arte/Cuenta Atras/7.png" id="9_tbtyv"]
+[ext_resource type="Texture2D" uid="uid://d1fg33tehgaav" path="res://Arte/Cuenta Atras/8.png" id="10_pui13"]
+[ext_resource type="Texture2D" uid="uid://bk3an7gs4bapq" path="res://Arte/Cuenta Atras/9.png" id="11_3oaa6"]
+
+[node name="ContadorTiempoLabel" type="HBoxContainer" unique_id=4223817]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_7jqcx")
+duracion_segundos = 90.0
+imagenes_numeros = Array[Texture2D]([ExtResource("2_ctvr5"), ExtResource("3_sfnvt"), ExtResource("4_b4drr"), ExtResource("5_ky0rv"), ExtResource("6_uwbgc"), ExtResource("7_4jhn5"), ExtResource("8_iynu4"), ExtResource("9_tbtyv"), ExtResource("10_pui13"), ExtResource("11_3oaa6")])

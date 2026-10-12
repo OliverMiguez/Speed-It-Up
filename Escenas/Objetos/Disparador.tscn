@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://djys5ggdc40w0"]
+
+[ext_resource type="Script" uid="uid://crunuukmjiiyh" path="res://Scripts/Objetos/Disparador.gd" id="1_ha7yj"]
+[ext_resource type="Texture2D" uid="uid://3jfqcbk4d5vx" path="res://Arte/Objetos/Disparador.png" id="1_w5u6d"]
+[ext_resource type="PackedScene" uid="uid://qtgj706ailhx" path="res://Escenas/Objetos/Flecha.tscn" id="2_kmkwc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw3sd"]
+size = Vector2(29, 32)
+
+[node name="Disparador" type="StaticBody2D" unique_id=1207039004]
+collision_layer = 4
+script = ExtResource("1_ha7yj")
+flecha_scene = ExtResource("2_kmkwc")
+
+[node name="Dibujo" type="Sprite2D" parent="." unique_id=619371577]
+texture = ExtResource("1_w5u6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=52643735]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_yw3sd")
+
+[node name="Timer" type="Timer" parent="." unique_id=314067656]
+
+[node name="PuntoDisparo" type="Marker2D" parent="." unique_id=501491326]
+position = Vector2(-8, 3)

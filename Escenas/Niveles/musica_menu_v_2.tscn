@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://rv8555u8t0yl"]
+
+[ext_resource type="AudioStream" uid="uid://nk2vyh7leh51" path="res://Musica/algo que experimento.wav" id="1_u3xd2"]
+[ext_resource type="Script" uid="uid://ced4slnp4k7d5" path="res://Scripts/Musica/musica_menu_v_2.gd" id="2_62llp"]
+
+[node name="MusicaMenuV2" type="AudioStreamPlayer" unique_id=344207548]
+stream = ExtResource("1_u3xd2")
+script = ExtResource("2_62llp")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

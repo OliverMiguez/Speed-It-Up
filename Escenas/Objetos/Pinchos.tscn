@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bdfmted78j0cn"]
+
+[ext_resource type="Script" uid="uid://bro6by5sxyori" path="res://Scripts/Objetos/Pincho.gd" id="1_2v4g1"]
+[ext_resource type="Texture2D" uid="uid://3mxlrh8atdq4" path="res://Arte/Objetos/Pinchos.png" id="1_oncke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2v4g1"]
+size = Vector2(26, 21)
+
+[node name="Pinchos" type="Node2D" unique_id=725874561]
+script = ExtResource("1_2v4g1")
+
+[node name="Dibujo" type="Sprite2D" parent="." unique_id=62887900]
+texture = ExtResource("1_oncke")
+
+[node name="AreaColision" type="Area2D" parent="." unique_id=1543780645]
+
+[node name="Colision" type="CollisionShape2D" parent="AreaColision" unique_id=755987277]
+position = Vector2(1, 5.5)
+shape = SubResource("RectangleShape2D_2v4g1")
+debug_color = Color(0.7549152, 0.2524381, 0, 0.41960785)
+
+[connection signal="body_entered" from="AreaColision" to="." method="_on_area_colision_body_entered"]
+[connection signal="body_exited" from="AreaColision" to="." method="_on_area_colision_body_exited"]
