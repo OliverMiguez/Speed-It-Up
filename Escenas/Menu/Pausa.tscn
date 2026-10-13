@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cjrjhod3bwuy5"]
+
+[ext_resource type="Script" uid="uid://dm5o5dkup0sai" path="res://Scripts/Niveles/pausa.gd" id="1_s3sgt"]
+[ext_resource type="Texture2D" uid="uid://dtwvtihuwposo" path="res://Arte/Textos/BACK.png" id="2_1rxft"]
+
+[node name="Pausa" type="Control" unique_id=308961913]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s3sgt")
+
+[node name="Back" type="Button" parent="." unique_id=971933867]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 145.0
+offset_right = 513.0
+offset_bottom = 253.0
+scale = Vector2(2, 2)
+icon = ExtResource("2_1rxft")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
