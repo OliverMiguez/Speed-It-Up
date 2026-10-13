@@ -38,6 +38,7 @@ func _preparar_nodos_pantalla() -> void:
 		add_child(rect)
 
 func iniciar() -> void:
+	await get_tree().create_timer(2.0).timeout
 	tiempo_restante = duracion_segundos
 	activo = true
 
