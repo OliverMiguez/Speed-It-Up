@@ -38,7 +38,8 @@ func _preparar_nodos_pantalla() -> void:
 		add_child(rect)
 
 func iniciar() -> void:
-	await get_tree().create_timer(2.0).timeout
+	# espera 2 segundo para que el contador no se inicie a al vez que la cuenta atras
+	await get_tree().create_timer(2.0).timeout 
 	tiempo_restante = duracion_segundos
 	activo = true
 

@@ -10,6 +10,7 @@ class_name ConteoInicio
 
 @onready var sprite_conteo: TextureRect = $SpriteConteo
 @onready var timer_conteo: Timer = $TimerConteo
+@onready var _3_2_1_go: AudioStreamPlayer = $"3,2,1,GO"
 
 # Señal para avisar al juego/jugador de que el conteo ha terminado
 signal conteo_finalizado
@@ -18,9 +19,13 @@ var paso_actual: int = 0
 var lista_sprites: Array[Texture2D] = []
 
 func _ready() -> void:
-	lista_sprites = [tex_3, tex_2, tex_1, tex_go]
-	timer_conteo.timeout.connect(_al_terminar_timer)
-	iniciar_conteo()
+	if Configuracion.fun_mode_activo == true:
+		_3_2_1_go.play()
+		lista_sprites = [tex_3, tex_2, tex_1, tex_go]
+		timer_conteo.timeout.connect(_al_terminar_timer)
+		iniciar_conteo()
+	else:
+		conteo_finalizado.emit.call_deferred() 
 
 func iniciar_conteo() -> void:
 	paso_actual = 0

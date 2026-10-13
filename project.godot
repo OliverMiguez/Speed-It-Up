@@ -21,16 +21,19 @@ ControladorMuerte="*uid://b150hyccgpuqc"
 MusicaTutorial="uid://i1joe7aj31pn"
 Configuracion="*uid://c24tehymvpw8e"
 MusicaMenuV2="*uid://rv8555u8t0yl"
+ControladorSpeedRun="*uid://b21jld4el4vki"
 
 [display]
 
-window/size/mode=3
+window/size/mode=2
 
 [file_customization]
 
 folder_colors={
 "res://Arte/": "red",
-"res://Escenas/": "teal"
+"res://Escenas/": "teal",
+"res://Exportacion/": "gray",
+"res://Musica/": "purple"
 }
 
 [global_group]

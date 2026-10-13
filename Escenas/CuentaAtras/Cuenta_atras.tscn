@@ -27,8 +27,7 @@ pivot_offset = Vector2(16, 16)
 [node name="TimerConteo" type="Timer" parent="." unique_id=185849587]
 one_shot = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=290410314]
+[node name="3,2,1,GO" type="AudioStreamPlayer" parent="." unique_id=290410314]
 stream = ExtResource("2_w1qpv")
 volume_db = -6.391
 pitch_scale = 1.41
-autoplay = true

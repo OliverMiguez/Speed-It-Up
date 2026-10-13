@@ -40,6 +40,7 @@ func _on_volumen_changed(nuevo_valor: float) -> void:
 func _on_fun_mode_toggled(activado: bool) -> void:
 	Configuracion.fun_mode_activo = activado
 	print("--- FUN MODE / EFECTOS VISUALES:", activado, "---")
+	#ControladorSpeedRun.activo_speedrun = true
 
 func _on_boton_volver_pressed() -> void:
 # Cambia a la ruta guardada en 'escena_menu_principal'

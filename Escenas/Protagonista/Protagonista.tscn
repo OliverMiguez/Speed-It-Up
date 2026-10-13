@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://e15euhls4h5b" path="res://Musica/EFETOS/muerte2.mp3" id="18_ocysy"]
 [ext_resource type="AudioStream" uid="uid://cbveqkuqa1asf" path="res://Musica/EFETOS/pinchos.mp3" id="19_ocysy"]
 [ext_resource type="AudioStream" uid="uid://c560n2vctdwdf" path="res://Musica/EFETOS/flecha.mp3" id="20_uju31"]
+[ext_resource type="AudioStream" uid="uid://c1lvd0whneew3" path="res://Musica/EFETOS/muerte_speedrun.wav" id="21_uju31"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ogv3y"]
 atlas = ExtResource("2_3kacm")
@@ -285,6 +286,11 @@ volume_db = -19.591
 [node name="MuerteFlechas" type="AudioStreamPlayer" parent="." unique_id=1720620415]
 stream = ExtResource("20_uju31")
 volume_db = -23.883
+
+[node name="MuerteSpeedRun" type="AudioStreamPlayer" parent="." unique_id=1595870837]
+stream = ExtResource("21_uju31")
+volume_db = -10.457
+pitch_scale = 2.08
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="HurtBox" to="." method="_on_area_colision_body_entered"]

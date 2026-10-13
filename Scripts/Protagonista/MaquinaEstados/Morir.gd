@@ -27,18 +27,19 @@ func on_enter():
 		print("--- CAUSA DE MUERTE LEÍDA POR EL ESTADO: '", causa, "' ---")
 
 		# 2. Reproducimos el audio correspondiente
-		if causa == "flecha":
-			var audio_flechas = father.get_node_or_null("MuerteFlechas")
-			if audio_flechas:
-				audio_flechas.play()
-			elif has_node("../../MuerteFlechas"):
-				$"../../MuerteFlechas".play()
-		else:
-			var audio_pinchos = father.get_node_or_null("MuertePinchos")
-			if audio_pinchos:
-				audio_pinchos.play()
-			elif has_node("../../MuertePinchos"):
-				$"../../MuertePinchos".play()
+		if Configuracion.fun_mode_activo == true:
+			if causa == "flecha":
+				var audio_flechas = father.get_node_or_null("MuerteFlechas")
+				if audio_flechas:
+					audio_flechas.play()
+				elif has_node("../../MuerteFlechas"):
+					$"../../MuerteFlechas".play()
+			else:
+				var audio_pinchos = father.get_node_or_null("MuertePinchos")
+				if audio_pinchos:
+					audio_pinchos.play()
+				elif has_node("../../MuertePinchos"):
+					$"../../MuertePinchos".play()
 	
 	if animation_player:
 		animation_player.play("SLIDER")
@@ -51,8 +52,12 @@ func state_process(delta: float) -> void:
 		father.aplicar_gravedad(delta)
 
 func esperar_y_reiniciar() -> void:
-	await get_tree().create_timer(duracion_hasta_reiniciar).timeout
-	
+	if Configuracion.fun_mode_activo == true:
+		await get_tree().create_timer(duracion_hasta_reiniciar).timeout
+	else: 
+		$"../../MuerteSpeedRun".play() 
+		await get_tree().create_timer(1.0).timeout
+
 	# IMPORTANTE: Reseteamos las banderas locales y globales ANTES de reiniciar
 	ya_procesado = false
 	ControladorMuerte.a_muerto = false
