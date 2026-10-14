@@ -15,10 +15,10 @@ script = ExtResource("1_s3sgt")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1355887484]
 
 [node name="Back" type="Button" parent="CanvasLayer" unique_id=971933867]
-offset_left = 405.0
-offset_top = 145.0
-offset_right = 513.0
-offset_bottom = 253.0
+offset_left = 835.0
+offset_top = 861.0
+offset_right = 943.0
+offset_bottom = 969.0
 scale = Vector2(2, 2)
 icon = ExtResource("2_1rxft")
 

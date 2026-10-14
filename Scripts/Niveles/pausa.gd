@@ -27,4 +27,5 @@ func alternar_pausa() -> void:
 func _on_back_pressed() -> void:
 	var esta_pausado = get_tree().paused # crea una variable temporal que recoge true/false segun el estado del juegio
 	get_tree().paused = not esta_pausado
-	visible = not visible
+	#visible = not visible
+	canvas_layer.visible = not canvas_layer.visible
