@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dm5o5dkup0sai" path="res://Scripts/Niveles/pausa.gd" id="1_s3sgt"]
 [ext_resource type="Texture2D" uid="uid://dtwvtihuwposo" path="res://Arte/Textos/BACK.png" id="2_1rxft"]
+[ext_resource type="Texture2D" uid="uid://bm7rp2aon0ivc" path="res://Arte/Textos/Paused.png" id="3_rotsp"]
+[ext_resource type="Texture2D" uid="uid://ct17jrnam11c5" path="res://Arte/Textos/pausa2.png" id="4_wmgvh"]
 
 [node name="Pausa" type="Control" unique_id=308961913]
 layout_mode = 3
@@ -15,11 +17,29 @@ script = ExtResource("1_s3sgt")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1355887484]
 
 [node name="Back" type="Button" parent="CanvasLayer" unique_id=971933867]
-offset_left = 835.0
-offset_top = 861.0
-offset_right = 943.0
-offset_bottom = 969.0
+offset_left = 847.0
+offset_top = 653.0
+offset_right = 955.0
+offset_bottom = 761.0
 scale = Vector2(2, 2)
 icon = ExtResource("2_1rxft")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=264303469]
+offset_left = 54.0
+offset_top = -3.0
+offset_right = 54.0
+offset_bottom = -3.0
+alignment = 1
+
+[node name="Paused" type="Sprite2D" parent="CanvasLayer/HBoxContainer" unique_id=702859562]
+position = Vector2(1005, 245)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_rotsp")
+
+[node name="Pausa2" type="Sprite2D" parent="CanvasLayer/HBoxContainer" unique_id=164893185]
+visible = false
+position = Vector2(920, 181)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_wmgvh")
 
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
