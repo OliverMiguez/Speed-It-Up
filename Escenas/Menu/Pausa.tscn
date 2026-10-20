@@ -1,45 +1,94 @@
 [gd_scene format=3 uid="uid://cjrjhod3bwuy5"]
 
 [ext_resource type="Script" uid="uid://dm5o5dkup0sai" path="res://Scripts/Niveles/pausa.gd" id="1_s3sgt"]
-[ext_resource type="Texture2D" uid="uid://dtwvtihuwposo" path="res://Arte/Textos/BACK.png" id="2_1rxft"]
 [ext_resource type="Texture2D" uid="uid://bm7rp2aon0ivc" path="res://Arte/Textos/Paused.png" id="3_rotsp"]
+[ext_resource type="Texture2D" uid="uid://dtwvtihuwposo" path="res://Arte/Textos/BACK.png" id="4_2nkob"]
 [ext_resource type="Texture2D" uid="uid://ct17jrnam11c5" path="res://Arte/Textos/pausa2.png" id="4_wmgvh"]
+[ext_resource type="Texture2D" uid="uid://cocm7f0t764q3" path="res://Arte/Textos/Exit.png" id="5_f5ec0"]
+[ext_resource type="Texture2D" uid="uid://dej3g5k6nla6m" path="res://Arte/Textos/MUSIC.png" id="5_mca6r"]
+[ext_resource type="AudioStream" uid="uid://nk2vyh7leh51" path="res://Musica/algo que experimento.wav" id="5_vw2ie"]
+[ext_resource type="Texture2D" uid="uid://b7a55k18gfk02" path="res://Arte/Textos/FUN MODE.png" id="6_ikuy6"]
 
-[node name="Pausa" type="Control" unique_id=308961913]
-layout_mode = 3
+[node name="Pausa" type="CanvasLayer" unique_id=46817911]
+process_mode = 3
+layer = 100
+script = ExtResource("1_s3sgt")
+
+[node name="Panel" type="Panel" parent="." unique_id=267365770]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_s3sgt")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1355887484]
+[node name="Music" type="Sprite2D" parent="Panel" unique_id=1946195957]
+position = Vector2(589, 370)
+scale = Vector2(3, 3)
+texture = ExtResource("5_mca6r")
 
-[node name="Back" type="Button" parent="CanvasLayer" unique_id=971933867]
-offset_left = 847.0
-offset_top = 653.0
-offset_right = 955.0
-offset_bottom = 761.0
+[node name="FunModes" type="Sprite2D" parent="Panel" unique_id=1859175459]
+position = Vector2(582, 511)
+scale = Vector2(3, 3)
+texture = ExtResource("6_ikuy6")
+
+[node name="HSlider" type="HSlider" parent="Panel" unique_id=2022665585]
+layout_mode = 0
+offset_left = 723.0
+offset_top = 389.0
+offset_right = 1025.5
+offset_bottom = 405.0
 scale = Vector2(2, 2)
-icon = ExtResource("2_1rxft")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=264303469]
-offset_left = 54.0
+[node name="FunMode" type="CheckBox" parent="Panel" unique_id=877246291]
+layout_mode = 0
+offset_left = 781.0
+offset_top = 521.0
+offset_right = 805.0
+offset_bottom = 545.0
+scale = Vector2(3, 3)
+
+[node name="BackGame" type="Button" parent="Panel" unique_id=470315161]
+layout_mode = 0
+offset_left = 826.0
+offset_top = 813.0
+offset_right = 934.0
+offset_bottom = 921.0
+scale = Vector2(3, 3)
+icon = ExtResource("4_2nkob")
+flat = true
+
+[node name="Menu" type="Button" parent="Panel" unique_id=156526611]
+layout_mode = 0
+offset_top = 952.0
+offset_right = 334.0
+offset_bottom = 1160.0
+icon = ExtResource("5_f5ec0")
+flat = true
+
+[node name="MusicaPausa" type="AudioStreamPlayer" parent="." unique_id=797069478]
+stream = ExtResource("5_vw2ie")
+volume_db = -9.37
+pitch_scale = 0.62
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=264303469]
+process_mode = 3
+offset_left = 56.0
 offset_top = -3.0
-offset_right = 54.0
+offset_right = 56.0
 offset_bottom = -3.0
 alignment = 1
 
-[node name="Paused" type="Sprite2D" parent="CanvasLayer/HBoxContainer" unique_id=702859562]
+[node name="Paused" type="Sprite2D" parent="HBoxContainer" unique_id=702859562]
 position = Vector2(1005, 245)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_rotsp")
 
-[node name="Pausa2" type="Sprite2D" parent="CanvasLayer/HBoxContainer" unique_id=164893185]
+[node name="Pausa2" type="Sprite2D" parent="HBoxContainer" unique_id=164893185]
 visible = false
 position = Vector2(920, 181)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_wmgvh")
 
-[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
+[connection signal="changed" from="Panel/HSlider" to="." method="_on_h_slider_changed"]
+[connection signal="toggled" from="Panel/FunMode" to="." method="_on_fun_mode_toggled"]
