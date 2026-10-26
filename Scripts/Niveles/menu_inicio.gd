@@ -1,5 +1,5 @@
 extends  Node2D
-
+class_name MenuInicio
 @onready var jugador: protagonista = $Protagonista # Ajusta el nombre/ruta a tu personaje
 @onready var reproductor_musica: AudioStreamPlayer = $MusicaNivel # Tu nodo de audio si está en el nivel
 @onready var audio_stream_player: AudioStreamPlayer = $MusicaNivel

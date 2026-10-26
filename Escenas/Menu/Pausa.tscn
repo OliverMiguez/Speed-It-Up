@@ -98,3 +98,4 @@ volume_db = -7.596
 [connection signal="changed" from="Panel/HSlider" to="." method="_on_h_slider_changed"]
 [connection signal="toggled" from="Panel/FunMode" to="." method="_on_fun_mode_toggled"]
 [connection signal="pressed" from="Panel/BackGame" to="." method="_on_back_game_pressed"]
+[connection signal="pressed" from="Panel/Menu" to="." method="_on_menu_pressed"]

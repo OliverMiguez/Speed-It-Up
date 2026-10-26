@@ -47,3 +47,12 @@ func _on_h_slider_changed(nuevo_valor: float) -> void:
 # El boton back funciona de igual forma que al presionar ESC
 func _on_back_game_pressed() -> void:
 	alternar_pausa()
+
+
+func _on_menu_pressed() -> void:
+	if get_tree().current_scene.name == "MenuInicio":
+		get_tree().quit()
+	else:
+		alternar_pausa() # Vuelve invisible de nuevo el menu
+		get_tree().change_scene_to_file("res://Escenas/Menu/Menu_inicio.tscn")
+		
