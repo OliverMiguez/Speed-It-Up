@@ -5,6 +5,7 @@
 
 [node name="MusicaMenuV2" type="AudioStreamPlayer" unique_id=344207548]
 stream = ExtResource("1_u3xd2")
+volume_db = -4.675
 script = ExtResource("2_62llp")
 
 [connection signal="finished" from="." to="." method="_on_finished"]

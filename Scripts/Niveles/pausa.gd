@@ -2,6 +2,7 @@ extends CanvasLayer
 class_name pausa
 
 @onready var musica_pausa: AudioStreamPlayer = $MusicaPausa
+@onready var pausa_efecto: AudioStreamPlayer = $PausaEfecto
 
 func _ready() -> void:
 	# El menú empieza oculto
@@ -24,6 +25,8 @@ func alternar_pausa() -> void:
 	visible = not visible
 	
 	if visible:
+		pausa_efecto.play()
+		await get_tree().create_timer(0.5).timeout # Espera 0.5 segundos antes de ejecutar la musica
 		musica_pausa.play()
 	else:
 		musica_pausa.stop()
@@ -40,3 +43,7 @@ func _on_h_slider_changed(nuevo_valor: float) -> void:
 	else:
 		AudioServer.set_bus_mute(bus_index, false)
 		AudioServer.set_bus_volume_db(bus_index, linear_to_db(nuevo_valor))
+
+# El boton back funciona de igual forma que al presionar ESC
+func _on_back_game_pressed() -> void:
+	alternar_pausa()
