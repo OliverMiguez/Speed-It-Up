@@ -3,11 +3,17 @@ class_name pausa
 
 @onready var musica_pausa: AudioStreamPlayer = $MusicaPausa
 @onready var pausa_efecto: AudioStreamPlayer = $PausaEfecto
+@onready var h_slider: HSlider = $Panel/HSlider
+@onready var fun_mode: CheckBox = $Panel/FunMode
 
 func _ready() -> void:
 	# El menú empieza oculto
 	visible = false
 	process_mode = Node.PROCESS_MODE_ALWAYS 
+	
+	# Asigna los valores actuales del volumen y del fun mode
+	h_slider.value = Configuracion.volumen_general
+	fun_mode.button_pressed = Configuracion.fun_mode_activo
 	
 	# Bucle de seguridad: Fuerza a TODOS los elementos hijos (sliders, botones, paneles) 
 	# a estar activos incluso cuando el juego está pausado.
